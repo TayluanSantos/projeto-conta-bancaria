@@ -1,19 +1,23 @@
 import readlinesync = require("readline-sync");
 import { colors } from "./src/util/Colors";
 import { Conta } from "./src/model/Conta";
+import { ContaCorrente } from "./src/model/ContaCorrente";
+import { ContaPoupanca } from "./src/model/ContaPoupanca";
 
 export function main() {
 
     let opcao: number;
 
+    // CONTA
+
     //Novas Instâncias da Classe Conta (Objetos)
     const c1: Conta = new Conta(1, 1234, 1, 'Júlia Castro', 800000.00);
     const c2: Conta = new Conta(2, 1234, 2, 'Marcella Sanches', 600000.00);
 
-    // Visualizando os dados da Conta c1
+    // // Visualizando os dados da Conta c1
     c1.visualizar();
 
-    // Visualizando os dados da Conta c2
+    // // Visualizando os dados da Conta c2
     c2.visualizar();
 
     // Visualizando o Saldo da Conta c1
@@ -40,6 +44,61 @@ export function main() {
     console.log(`\nDepositar 300000.25 Reais da Conta C2: `); 
     c2.depositar(300000.25)
     c2.visualizar();
+
+
+    // // CONTA CORRENTE
+
+    // Criando novas Instâncias da Classe Conta Corrente (Objetos)
+    const cc1: ContaCorrente = new ContaCorrente(3, 1234, 1, 'Amanda Magro', 1000000.00,100000);
+    const cc2: ContaCorrente = new ContaCorrente(4, 1234, 1, 'João da Silva',1000, 100);
+
+    // Visualizando informações das contas 
+    cc1.visualizar();
+    cc2.visualizar();
+
+    // Operação de Saque
+    console.log(`\nSaque de R$ 25.000,00 na Conta CC1: ${cc1.sacar(25000)}\n`);
+    cc1.visualizar();
+
+    console.log(`\nSaque de R$ 1.500,00 na Conta CC2: ${cc2.sacar(1500)}`);
+    cc2.visualizar();
+
+    // Operação de Depósito
+
+    console.log(`\nDepositar R$ 100.000,00 na Conta CC1:`);
+    cc1.depositar(100000);
+    cc1.visualizar();
+    
+    console.log(`\nDepositar R$ 3.000,99 na Conta CC2:`);
+    cc2.depositar(3000.99);
+    cc2.visualizar();
+
+
+    // CONTA POUPANÇA
+    
+    // Criando novas Instâncias da Classe Conta Corrente (Objetos)
+    const cp1: ContaPoupanca = new ContaPoupanca(1, 1234, 2 , "Maria", 5000, 30);
+    const cp2: ContaPoupanca = new ContaPoupanca(1, 1234, 2 , 'José', 3500, 25);
+
+    // Visualizando informações das contas 
+    cp1.visualizar();
+    cp2.visualizar();
+
+    // Operação de Saque
+    console.log(`\nSaque de R$ 1.500,00 na Conta CP1: ${cp1.sacar(7500)}`);
+    cp1.visualizar();
+
+    console.log(`\nSaque de R$ 500,00 na Conta CP2: ${cp2.sacar(500)}`);
+    cp2.visualizar();
+ 
+    // Operação de Depósito
+    console.log(`\nDepositar R$ 1.000,00 na Conta CP1:`);
+    cp1.depositar(1000);
+    cp1.visualizar();
+
+    console.log(`\nDepositar R$ 1.500,00 na Conta CP1:`);
+    cp2.depositar(1500);
+    cp2.visualizar();
 
     while (true) {
         console.log(colors.fg.magentastrong)

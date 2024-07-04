@@ -37,31 +37,32 @@ export class Conta {
          return this._saldo;
      }
   
-     public set numero(value: number) {
-         this._numero = value;
+     public set numero(numero: number) {
+         this._numero = numero;
      }
  
-     public set agencia(value: number) {
-         this._agencia = value;
+     public set agencia(agencia: number) {
+         this._agencia = agencia;
      }
  
-     public set tipo(value: number) {
-         this._tipo = value;
+     public set tipo(tipo: number) {
+         this._tipo = tipo;
      }
  
-     public set titular(value: string) {
-         this._titular = value;
+     public set titular(titular: string) {
+         this._titular = titular;
      }
   
-     public set saldo(value: number) {
-         this._saldo = value;
+     public set saldo(valor: number) {
+         this._saldo = valor;
      }
  
      // Método Sacar dinheiro da conta
      public sacar(valor: number): boolean{
  
          if(this._saldo < valor){
-             console.log("Saldo é insuficiente!")
+             console.log("\n******************************************");
+             console.log("Saldo é insuficiente!");
              return false;
          }
  
@@ -95,6 +96,6 @@ export class Conta {
          console.log(`Numero da agência: ${this._agencia}`);
          console.log(`Tipo da conta: ${tipo}`);
          console.log(`Titular da conta: ${this._titular}`);
-         console.log(`Saldo da conta: ${this._saldo.toFixed(2)}\n`);
+         console.log(`Saldo da conta: ${this._saldo.toFixed(2)}`);
      } 
 }
