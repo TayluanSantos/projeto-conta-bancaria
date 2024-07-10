@@ -2,7 +2,7 @@ import { Conta } from "../model/Conta";
 
 export interface ContaRepository {
 
-    // Métodos CRUD
+    // Métodos CRUD 
 
     procurarPorNumero(numero : number) : void;
     listaTodas() : void;
@@ -16,8 +16,4 @@ export interface ContaRepository {
     depositar(numero: number , valor: number) : void;
     transferir(numeroOrigem: number, numeroDestino: number , valor: number) : void;
 
-    
-
-
-    
 }

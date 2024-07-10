@@ -75,7 +75,7 @@ export abstract class Conta {
          this._saldo = this._saldo + valor;
      }
  
-     // Método para visualizar todos os dados do Objeto
+     // Método para visualizar todas as informações do Objeto
      public visualizar(): void{
  
          let tipo: string = "";
