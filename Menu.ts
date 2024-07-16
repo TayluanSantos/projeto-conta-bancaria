@@ -23,7 +23,7 @@ export function main() {
 
     // CONTA POUPANÇA
     
-    // Criando novas Instâncias da Classe Conta Corrente (Objetos)
+    // Criando novas Instâncias da Classe Conta Poupança (Objetos)
     contas.cadastrar(new ContaPoupanca(contas.gerarNumero(), 1234, 2 , "Geana Almeida", 10000, 10));
     contas.cadastrar(new ContaPoupanca(contas.gerarNumero(), 1234, 2 , 'Jean Lima', 15000, 15)) ;
 
@@ -154,6 +154,7 @@ export function main() {
                 console.log(colors.fg.magentastrong);
                 console.log("\nApagar uma Conta\n",colors.reset);
 
+                console.log(colors.fg.magentastrong);
                 console.log("Digite o número da conta:")
                 numero = readlinesync.questionInt("");
                 contas.deletar(numero);

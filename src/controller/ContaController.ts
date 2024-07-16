@@ -1,12 +1,20 @@
 import { Conta } from '../model/Conta';
 import { ContaRepository } from './../repository/ContaRepository';
 export class ContaController implements ContaRepository {
-
+   
     // Coleção do tipo Array para armazenar objetos do tipo Conta
     private _listaContas: Conta[] = new Array<Conta>();
 
     // Controlar os Números das Contas
     public numero: number = 0;
+
+    procurarPorTitular(titular: string): void {
+        let buscaPorTitular = this._listaContas.filter( conta => 
+            conta.titular.includes(titular)
+        )
+
+        buscaPorTitular.forEach(conta => conta.visualizar());
+    }
 
     procurarPorNumero(numero: number): void {
         let buscaConta = this.buscarNoArray(numero);
@@ -48,6 +56,7 @@ export class ContaController implements ContaRepository {
             console.log("Conta não encontrada!");
         }
     }
+
 
     sacar(numero: number, valor: number): void {
         let buscaConta = this.buscarNoArray(numero);
