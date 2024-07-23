@@ -2,7 +2,7 @@
 
 
 ## ✍️ Descrição
-O projeto Conta Bancária foi desenvolvido como prosposta de projeto final do módulo I do bootcamp Javascript Fullstack da Generation Brasil.
+O projeto Conta Bancária foi desenvolvido durante o módulo I do bootcamp Javascript Fullstack da Generation Brasil.
 
 ## 🔨 Ferramentas
 - TypeScript
